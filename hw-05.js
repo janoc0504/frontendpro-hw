@@ -3,20 +3,20 @@ let firstNumber = +prompt("Input first number");
 let secondNumber = +prompt("Input second number");
 
 if (result === '/' && secondNumber === 0) {
-    alert("You can't do division by 0!");
+    alert("You can't do division by '0'!");
 } else {
     switch (result) {
         case '+':
-            console.log(firstNumber + secondNumber);
+            console.log(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
             break;
         case '-':
-            console.log(firstNumber - secondNumber);
+            console.log(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
             break;
         case '*':
-            console.log(firstNumber * secondNumber);
+            console.log(`${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`);
             break;
         case '/':
-            console.log(firstNumber / secondNumber);
+            console.log(`${firstNumber} / ${secondNumber} = ${firstNumber / secondNumber}`);
             break;
     }
 }
