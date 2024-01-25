@@ -1,27 +1,34 @@
-let numOrStr = prompt('input number or string');
-// console.log(numOrStr)
+let numOrStr = prompt('Input natural number');
+console.log(numOrStr);
 
-if(numOrStr === null) {
-    console.log('ви скасували');
-} else if( numOrStr.trim() === '' ) {
-    console.log('Empty String');
-} else if ( isNaN( +numOrStr ) ) {
-    console.log(' number is Ba_NaN');
-} else {
-    console.log('OK!');
-}
+// switch (numOrStr) {
+//     case '':
+//         console.log('Empty string.');
+//         break;
+//     case null:
+//         console.log('Canceled.');
+//         break;
+//     default:
+//         if (isNaN(numOrStr)) {
+//             console.log('Not a Number!');
+//         } else {
+//             console.log('OK!')
+//         }
+// }
 
-
-switch (numOrStr) {
-    case null:
-        console.log('ви скасували');
-        break;
-    case '':
-        console.log('Empty String');
-        break;
-    case isNaN( +numOrStr ):
-        console.log(' number is Ba_NaN');
+switch (isNaN(+numOrStr)) {
+    case true:
+        console.log('Not a Number!');
         break;
     default:
-        console.log('OK!');
+        switch (numOrStr) {
+            case null:
+                console.log('Canceled.');
+                break;
+            case '':
+                console.log('Empty string.');
+                break;
+            default:
+                console.log('OK!');
+        }
 }
