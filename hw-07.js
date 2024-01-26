@@ -1,13 +1,11 @@
 //1.Вивести на сторінку в один рядок через кому числа від 10 до 20.
-// let finish = 20;
-//
-// for (let i = 10; i <= finish; i++) {
-//     if(i === 20) {
-//         console.log(`${20}.`)
-//     } else {
-//         console.log(`${i},`);
-//     }
-// }
+let finish = 20;
+let arr = [];
+
+for (let i = 10; i <= finish; i++) {
+        arr.push(i);
+    }
+console.log(`${arr}.`);
 
 //2.Вивести квадрати чисел від 10 до 20.
 // let finish = 20;
