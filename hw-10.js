@@ -109,4 +109,16 @@ let array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63,
 // console.log(arrayPosEl);
 // console.log(multi);
 
-//10.Знайти найбільший серед елементів масиву, ост альні обнулити.
+//10.Знайти найбільший серед елементів масиву, остальні обнулити.
+let maxEl = array[0];
+console.log(maxEl);
+
+array.forEach(function (element, index) {
+  if (index > 0) {
+    if (element > maxEl) {
+      maxEl = element;
+    }
+  }
+})
+console.log(array.indexOf(maxEl));
+console.log(maxEl);
