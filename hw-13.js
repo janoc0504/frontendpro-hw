@@ -55,10 +55,6 @@ let users = [
 }
 ]
 
-
-let balances = +"$3,261.65".replace(/[^0-9.]/g, '');
-
-
 let sum = 0;
 function chekUsers() {
   let maxBal = [];
