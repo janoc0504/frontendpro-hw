@@ -54,32 +54,76 @@ let users = [
 "address": "314 Dunne Place, Bawcomville, Guam, 9053"
 }
 ]
+//FIRST VARIANT=================================================
+// //Phone numbers of users whose blance is more than $2000.
 
-let sum = 0;
-function chekUsers() {
-  let maxBal = [];
+// let sum = 0;
+// function chekUsers() {
+//   let maxBal = [];
+//   for (let item of users) {
+//     let balances = +item["balance"].replace(/[^0-9.]/g, '');
+//     if (balances > 2000) {
+//       maxBal.push(item);
+//     }
+//   }
+//   return maxBal;
+// }
+
+// let usersMaxBal = chekUsers(users);
+
+// for (let item of usersMaxBal) {
+//   let phones = item["phone"];
+//   let name = item["name"];
+//   console.log(phones, name);
+// }
+
+// //The sum of all users balances.
+
+// function sumBal() {
+//   for (let item of users) {
+//     let balances = +item["balance"].replace(/[^0-9.]/g, '');
+//     sum += balances;
+//   }
+//   return sum;
+// }
+// sumBal(users);
+// console.log(sum.toFixed(2));
+
+
+
+//SECOND VARIANT========================================================
+//Phone numbers of users whose blance is more than $2000.
+
+function maxBal() {
+  let maxBalances = [];
+
   for (let item of users) {
     let balances = +item["balance"].replace(/[^0-9.]/g, '');
     if (balances > 2000) {
-      maxBal.push(item);
+      maxBalances.push(item);
     }
   }
-  return maxBal;
+  return maxBalances;
 }
 
-let usersMaxBal = chekUsers(users);
-
-for (let item of usersMaxBal) {
+for (let item of maxBal(users)) {
   let phones = item["phone"];
   let name = item["name"];
-  console.log(phones, name);
+  console.log(name, phones);
 }
 
-function sumBal() {
+//The sum of all users balances
+let sum = 0;
+function balUsers() {
+  let bals = [];
+
   for (let item of users) {
     let balances = +item["balance"].replace(/[^0-9.]/g, '');
-    sum += balances;
+    bals.push(balances);
+    sum += balances * 100;
   }
+  return bals;
 }
-sumBal(users);
-console.log(sum.toFixed(2));
+
+balUsers(users);
+console.log("The sum of all users balances =",`${sum / 100}`);
