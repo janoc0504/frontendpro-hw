@@ -20,35 +20,39 @@
 // console.log(averSum(array));
 
 //2.Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
-function doMath(x, znack, y) {
-  if (x === NaN) {
-      console.log(typeof(x)),
-    console.log('You did not enter numbers.')
-  } else if (znack === '+') {
-    sum = x + y;
-    return sum;
-  } else if (znack === '-') {
-    diff = x - y;
-    return diff;
-  } else if (znack === '*') {
-    mult = x * y;
-    return mult;
-  } else if (znack === '/') {
-    div = x / y;
-    return div;
-  } else if (znack === '%') {
-    divWithoutRem = x % y;
-    return divWithoutRem;
-  } else if (znack === '^') {
-    degree = x ** y;
-    return degree;
-  } else {
-    console.log('You did not enter one of the simbols +, -, *, /, %, ^ in field ZNACK')
-  }
-}
+// function doMath(x, znack, y) {
+//   if (!isNaN(x) && !isNaN(y)) {
+//     if (y === 0 && znack === '/') {
+//       console.log("You can't do division by 0!");
+//     } else {
+//       switch(znack) {
+//       case '+':
+//       sum = x + y;
+//       return sum;
+//       case '-':
+//       diff = x - y;
+//       return diff;
+//       case '/':
+//       div = x / y;
+//       return div;
+//       case '*':
+//       mult = x * y;
+//       return mult;
+//       case '^':
+//       degree = x ** y;
+//       return degree;
+//       case '%':
+//       divWithoutRem = x % y;
+//       return divWithoutRem;
+//       default:
+//         console.log('You did not enter one of the simbols [+, -, *, /, %, ^] in field ZNACK');
+//     }
+//   }
+// } else { console.log('One of the symbols (or both) is not a number.'); }
+// }
 
-let x = +prompt('x');
-let znack = prompt('znack');
-let y = +prompt('y');
-let res = doMath(x, znack, y);
-console.log(res);
+// let x = +prompt('x');
+// let znack = prompt('znack');
+// let y = +prompt('y');
+// let res = doMath(x, znack, y);
+// console.log(res);
