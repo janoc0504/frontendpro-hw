@@ -56,3 +56,21 @@
 // let y = +prompt('y');
 // let res = doMath(x, znack, y);
 // console.log(res);
+
+//4.Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+function func(ourString, firstLetter, secondLetter) {
+  let arr = ourString.split('');
+  arr.forEach((item, index) => {
+    if (item === firstLetter) {
+      delete arr[index];
+    }
+    if (item === secondLetter) {
+      delete arr[index];
+    }
+  })
+  return console.log(str2 = arr.join(''));
+}
+let ourString = prompt('String');
+let firstLetter = prompt('firstLetter');
+let secondLetter = prompt('secondLetter');
+func(ourString, firstLetter, secondLetter);
