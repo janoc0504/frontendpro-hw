@@ -1,0 +1,12 @@
+.invalid {
+  border-color: red;
+}
+
+#error {
+  color: red;
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
