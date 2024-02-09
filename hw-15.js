@@ -57,20 +57,37 @@
 // let res = doMath(x, znack, y);
 // console.log(res);
 
-//4.Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
-function func(ourString, firstLetter, secondLetter) {
-  let arr = ourString.split('');
-  arr.forEach((item, index) => {
-    if (item === firstLetter) {
-      delete arr[index];
+
+//3.Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
+function pushArr() {
+  let array = [];
+  let rows = prompt('Rows');
+  for (let i = 0; i < rows; i++) {
+    let columns = prompt('Columns');
+    array[i] = [];
+    for (let j = 0; j < columns; j++) {
+      array[i][j] = prompt('ELEMENTS of ARRAY');
     }
-    if (item === secondLetter) {
-      delete arr[index];
-    }
-  })
-  return console.log(str2 = arr.join(''));
+  }
+  return array;
 }
-let ourString = prompt('String');
-let firstLetter = prompt('firstLetter');
-let secondLetter = prompt('secondLetter');
-func(ourString, firstLetter, secondLetter);
+
+console.log(pushArr());
+
+//4.Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+// function func(ourString, firstLetter, secondLetter) {
+//   let arr = ourString.split('');
+//   arr.forEach((item, index) => {
+//     if (item === firstLetter) {
+//       delete arr[index];
+//     }
+//     if (item === secondLetter) {
+//       delete arr[index];
+//     }
+//   })
+//   return console.log(str2 = arr.join(''));
+// }
+// let ourString = prompt('String');
+// let firstLetter = prompt('firstLetter');
+// let secondLetter = prompt('secondLetter');
+// func(ourString, firstLetter, secondLetter);
