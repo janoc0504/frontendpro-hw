@@ -5,9 +5,7 @@ const btn = document.querySelector('#btn');
 function shuffle() {
   for (let i of arrImgs) {
     res = Math.floor(Math.random() * arrImgs.length);
-    document.querySelector('#imagess').src = arrImgs[res];
   }
-  
   return imgs.src = arrImgs[res];
 }
 
