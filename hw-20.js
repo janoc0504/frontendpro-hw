@@ -2,9 +2,15 @@ const arrImgs = ['./image/1.jpg', './image/2.jpg', './image/3.jpg', './image/4.j
 const imgs = document.querySelector('#imagess');
 const btn = document.querySelector('#btn');
 
-function shuffle() {
-    res = Math.floor(Math.random() * arrImgs.length);
-  return imgs.src = arrImgs[res];
-}
+// function shuffle() {
+//     res = Math.floor(Math.random() * arrImgs.length);
+//   return imgs.src = arrImgs[res];
+// }
 
-btn.addEventListener('click', shuffle);
+// btn.addEventListener('click', shuffle);
+
+
+btn.addEventListener('click', () => {
+  res = Math.floor(Math.random() * arrImgs.length);
+  return imgs.src = arrImgs[res];
+});
