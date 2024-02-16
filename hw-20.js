@@ -11,6 +11,5 @@ const btn = document.querySelector('#btn');
 
 
 btn.addEventListener('click', () => {
-  res = Math.floor(Math.random() * arrImgs.length);
-  return imgs.src = arrImgs[res];
+  imgs.src = arrImgs[Math.floor(Math.random() * arrImgs.length)];
 });
