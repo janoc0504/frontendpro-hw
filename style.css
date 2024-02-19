@@ -8,10 +8,8 @@
   width: 700px;
 }
 
-.arrows {
-}
-
-.rihgtArrow, .leftArrow {
+.rihgtArrow,
+.leftArrow {
   cursor: pointer;
   width: 100px;
 }

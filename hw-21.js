@@ -9,7 +9,7 @@ rihgtArrow.addEventListener('click', () => {
   imgs.src = imagesArr[i];
   imgs.style.paddingLeft = '0';
   leftArrow.style.display = 'block';
-  
+
   if (i === imagesArr.length - 1) {
     imgs.style.paddingRight = '100px';
     rihgtArrow.style.display = 'none';
@@ -22,9 +22,9 @@ leftArrow.addEventListener('click', () => {
   imgs.src = imagesArr[i];
   imgs.style.paddingRight = '0';
   rihgtArrow.style.display = 'block';
-  
+
   if (i === 0) {
     imgs.style.paddingLeft = '100px';
-    return leftArrow.style.display = 'none';
+    leftArrow.style.display = 'none';
   }
 });
