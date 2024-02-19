@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.imgs {
+  width: 700px;
+}
+
+.arrows {
+}
+
+.rihgtArrow, .leftArrow {
+  cursor: pointer;
+  width: 100px;
+}
