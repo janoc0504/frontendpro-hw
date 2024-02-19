@@ -5,23 +5,26 @@ const rihgtArrow = document.querySelector('.rihgtArrow');
 let i = 0;
 
 rihgtArrow.addEventListener('click', () => {
+  i++;
+  imgs.src = imagesArr[i];
   imgs.style.paddingLeft = '0';
   leftArrow.style.display = 'block';
-  imgs.src = imagesArr[i];
-  i++;
-
-  if (i === imagesArr.length) {
+  
+  if (i === imagesArr.length - 1) {
+    imgs.style.paddingRight = '100px';
     rihgtArrow.style.display = 'none';
   }
 });
 
+
 leftArrow.addEventListener('click', () => {
+  --i;
+  imgs.src = imagesArr[i];
+  imgs.style.paddingRight = '0';
+  rihgtArrow.style.display = 'block';
+  
   if (i === 0) {
     imgs.style.paddingLeft = '100px';
     return leftArrow.style.display = 'none';
   }
-
-  rihgtArrow.style.display = 'block';
-  --i;
-  imgs.src = imagesArr[i];
 });
