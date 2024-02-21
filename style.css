@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+}
+
+.part1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.smile1,
+.smile2,
+.smile3,
+.smile4,
+.smile5 {
+  font-size: 100px;
+  cursor: pointer;
+}
+
+.counter1,
+.counter2,
+.counter3,
+.counter4,
+.counter5 {
+  font-size: 50px;
+}
