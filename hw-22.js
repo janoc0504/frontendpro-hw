@@ -1,3 +1,5 @@
+// This id the bad code, but it works.
+
 // 'use strict';
 
 // let counter1 = document.querySelector('.counter1');
@@ -65,77 +67,40 @@
 //   }
 // });
 
-// 'use strict';
-// function createCounter(containerSelector, smileSelector, localStorageKey) {
-//   let container = document.querySelector(containerSelector);
-//   let smile = document.querySelector(smileSelector);
-//   let number = parseInt(localStorage.getItem(localStorageKey)) || 0;
+//This's the good code and it works too.
 
-//   function increment() {
-//     number++;
-//     localStorage.setItem(localStorageKey, number);
-//     updateDisplay();
-//   }
+'use strict';
 
-//   function updateDisplay() {
-//     container.textContent = number;
-//   }
+function createCounter(containerSelector, smileSelector, localStorageKey) {
+  let container = document.querySelector(containerSelector);
+  let smile = document.querySelector(smileSelector);
 
-//   function initialize() {
-//     updateDisplay();
-//     smile.addEventListener('click', increment);
-//   }
+  function increment() {
+    let number = localStorage.getItem(localStorageKey);
+    number++;
+    container.innerHTML = number;
+    localStorage.setItem(localStorageKey, number);
+  }
 
-//   return { initialize };
-// }
+    container.textContent = localStorage.getItem(localStorageKey);
+    smile.addEventListener('click', increment);
 
-// const counters = [
-//   createCounter('.counter1', '.smile1', 'counter1'),
-//   createCounter('.counter2', '.smile2', 'counter2'),
-//   createCounter('.counter3', '.smile3', 'counter3'),
-//   createCounter('.counter4', '.smile4', 'counter4'),
-//   createCounter('.counter5', '.smile5', 'counter5')
-// ];
+  return smile;
+}
 
-// //Функция создания счетчика с автоматическим сбросом
-// function createCounter(containerSelector, smileSelector, localStorageKey, resetThreshold) {
-//   let container = document.querySelector(containerSelector);
-//   let smile = document.querySelector(smileSelector);
-//   let number = parseInt(localStorage.getItem(localStorageKey)) || 0;
+const counters = [
+  createCounter('.counter1', '.smile1', 'counter1'),
+  createCounter('.counter2', '.smile2', 'counter2'),
+  createCounter('.counter3', '.smile3', 'counter3'),
+  createCounter('.counter4', '.smile4', 'counter4'),
+  createCounter('.counter5', '.smile5', 'counter5'),
+  createCounter('.counter6', '.smile6', 'counter6'),
+];
 
-//   function increment() {
-//     number++;
-//     localStorage.setItem(localStorageKey, number);
-//     updateDisplay();
-//     // Проверяем, достигло ли значение счетчика порога для сброса
-//     if (number >= resetThreshold) {
-//       reset();
-//     }
-//   }
-
-//   function updateDisplay() {
-//     container.textContent = number;
-//   }
-
-//   function reset() {
-//     number = 0;
-//     localStorage.setItem(localStorageKey, number);
-//     updateDisplay();
-//   }
-
-//   function initialize() {
-//     updateDisplay();
-//     smile.addEventListener('click', increment);
-//   }
-
-//   return { initialize };
-// }
-
-// // Создание счетчиков с разными порогами для сброса
-// const counters = [
-//   createCounter('.counter1', '.smile1', 'counter1', 10),   // Сброс при достижении 10
-//   createCounter('.counter2', '.smile2', 'counter2', 20),   // Сброс при достижении 20
-//   createCounter('.counter3', '.smile3', 'counter3', 30),   // Сброс при достижении 30
-//   createCounter('.counter4', '.smile4', 'counter4', 40),   // Сброс при достижении 40
-//   createCounter('.counter5', '.smile5', 'counter5', 50)    // Сброс при достижении 50
-// ];
+const resetBtn = document.querySelector('.resetBtn');
+resetBtn.addEventListener('click', () => {
+  localStorage.clear();
+    for (let smile of document.querySelectorAll('.counters')) {
+    smile.textContent = '';
+  }
+});

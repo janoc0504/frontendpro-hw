@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.part1 {
+.part {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,8 @@
 .smile2,
 .smile3,
 .smile4,
-.smile5 {
+.smile5,
+.smile6 {
   font-size: 100px;
   cursor: pointer;
 }
@@ -22,7 +23,8 @@
 .counter2,
 .counter3,
 .counter4,
-.counter5 {
+.counter5,
+.counter6 {
   font-size: 50px;
 }
 
