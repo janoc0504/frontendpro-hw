@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  justify-content: center;
 }
 
 .part1 {
@@ -23,4 +24,9 @@
 .counter4,
 .counter5 {
   font-size: 50px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
 }
