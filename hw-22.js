@@ -100,7 +100,7 @@ const counters = [
 const resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', () => {
   localStorage.clear();
-    for (let smile of document.querySelectorAll('.counters')) {
-    smile.textContent = '';
+    for (let smile of document.querySelectorAll('.reset')) {
+    smile.textContent = ' ';
   }
 });
