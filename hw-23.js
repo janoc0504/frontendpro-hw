@@ -1,16 +1,16 @@
-
 'use strict';
 
 function sortArray() {
-  let arrayLength = parseInt(prompt('Input length of array'));
+  let arrayLength = parseInt(prompt('Enter length of array'));
   let array = [];
+
   for (let i = 0; i < arrayLength; i++) {
-    let el = parseInt(prompt('Input element of array'));
+    let el = parseInt(prompt('Enter element of array'));
     array.push(el);
 
-    //Check for number
+  //Check for a number
     if (isNaN(array[i])) {
-      return console.log('Error! You inputed not a number as an element.');
+      return console.log('Error! You didn\'t enter a number as an element.');
     }
   }
   console.log(array);
