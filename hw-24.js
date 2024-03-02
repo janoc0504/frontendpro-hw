@@ -1,3 +1,5 @@
+'use strict';
+
 let ladder = {
     step: 0,
     up: function () {
@@ -14,4 +16,4 @@ let ladder = {
     }
 };
 
-ladder.up().up().down().up().up().up().up().down().showStep();
+ladder.up().up().down().up().up().up().up().down().up().showStep();
