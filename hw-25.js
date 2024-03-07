@@ -1,42 +1,74 @@
+'use strict';
+
 let goodsCategory = document.querySelector('#goodsCategory');
-let listGoods = [{name: 'phone', price: '$100'}, {name: 'phone2', price: '$102'}, {name: 'phone3', price: '$103'}];
+let listGoods = {
+    'PHONES': [{ name: 'iPhone', screen: 6.5, price: '$100' }, { name: 'Samsung Galaxy S24', screen: 7, price: '$102' }],
+    'LAPTOPS': [{ name: 'MacBook Air', screen: 17, price: '$500' }, { name: 'Samsung Galaxy Book3 360', screen: 14, price: '$200' }],
+    'HEADPHONES': [{ name: 'Samsung Galaxy Buds', price: '$50' }, { name: 'AirPods PRO', price: '$80' }]
+};
+
+let categories = ['PHONES', 'LAPTOPS', 'HEADPHONES'];
 
 let categoryList = document.createElement('div');
 goodsCategory.appendChild(categoryList);
-
-let elementCategory = document.createElement('div');
-elementCategory.className = 'category';
-elementCategory.innerHTML = 'FIRST CATEGORY';
-categoryList.appendChild(elementCategory);
-
-let element2Category = document.createElement('div');
-element2Category.className = 'category';
-element2Category.innerHTML = 'SECOND CATEGORY';
-categoryList.appendChild(element2Category);
 
 let goodsList = document.createElement('div');
 goodsCategory.appendChild(goodsList);
 
 let goodsInfo = document.createElement('div');
+goodsCategory.appendChild(goodsInfo);
 
-function showInfo(good) {
-    goodsInfo.innerHTML = `<p>Name: ${good.name}\nPrice: ${good.price}</p><button type="button">BUY</button>`;
-    goodsCategory.appendChild(goodsInfo);
-}
 
-function oneClick() {
-    listGoods.forEach(good => {
+function oneClick(event) {
+
+    document.querySelectorAll('.category').forEach(item => {
+        item.classList.remove('selected');
+    });
+
+    let categoryName = event.target.textContent.trim();
+    event.target.classList.add('selected');
+
+    goodsList.innerHTML = '';
+    goodsInfo.innerHTML = '';
+
+    listGoods[categoryName].forEach(good => {
         let listItem = document.createElement('div');
-        listItem.innerHTML = `<p>Name: ${good.name}</p><p>Price: ${good.price}</p>`;
+        listItem.innerHTML = `<p>${good.name}</p>`;
         goodsList.appendChild(listItem);
         listItem.className = 'list';
 
-        listItem.addEventListener('click', ()=> {
-            showInfo(good);
-        })
-    })
+        listItem.addEventListener('click', () => {
+            document.querySelectorAll('.list').forEach(item => {
+                item.classList.remove('selected');
+            });
 
-    elementCategory.removeEventListener('click', oneClick);
+            listItem.classList.add('selected');
+            showInfo(good);
+        });
+    });
 }
 
-elementCategory.addEventListener('click', oneClick);
+categories.forEach(paragraph => {
+    const parElement = document.createElement('div');
+    parElement.innerHTML = paragraph;
+    categoryList.appendChild(parElement);
+    parElement.className = 'category';
+});
+
+categoryList.addEventListener('click', oneClick);
+
+function showInfo(good) {
+    if(good.screen) {
+        goodsInfo.innerHTML = `<div class="info"><p>${good.name}, Screen: ${good.screen}, Price: ${good.price}</p>
+    <button type="button" class="buy" onclick="buy()">BUY</button></div>`;
+    } else {
+        goodsInfo.innerHTML = `<div class="info"><p>${good.name}, Price: ${good.price}</p>
+    <button type="button" class="buy" onclick="buy()">BUY</button></div>`;
+    }
+
+}
+
+function buy() {
+    alert(`The item was successfully purchased!`);
+    location.reload();
+}
