@@ -4,7 +4,7 @@ let goodsCategory = document.querySelector('#goodsCategory');
 let listGoods = {
     'PHONES': [{ name: 'iPhone', screen: 6.5, price: '$100' }, { name: 'Samsung Galaxy S24', screen: 7, price: '$102' }],
     'LAPTOPS': [{ name: 'MacBook Air', screen: 17, price: '$500' }, { name: 'Samsung Galaxy Book3 360', screen: 14, price: '$200' }],
-    'HEADPHONES': [{ name: 'Samsung Galaxy Buds', price: '$50' }, { name: 'AirPods PRO', price: '$80' }]
+    'HEADPHONES': [{ name: 'Samsung Galaxy Buds', power: '20Vt', price: '$50' }, { name: 'AirPods PRO', power: '16Vt', price: '$80' }]
 };
 
 let categories = ['PHONES', 'LAPTOPS', 'HEADPHONES'];
@@ -62,7 +62,7 @@ function showInfo(good) {
         goodsInfo.innerHTML = `<div class="info"><p>${good.name}, Screen: ${good.screen}, Price: ${good.price}</p>
     <button type="button" class="buy" onclick="buy()">BUY</button></div>`;
     } else {
-        goodsInfo.innerHTML = `<div class="info"><p>${good.name}, Price: ${good.price}</p>
+        goodsInfo.innerHTML = `<div class="info"><p>${good.name}, Power: ${good.power}, Price: ${good.price}</p>
     <button type="button" class="buy" onclick="buy()">BUY</button></div>`;
     }
 
