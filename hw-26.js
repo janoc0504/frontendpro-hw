@@ -1,3 +1,5 @@
+'use strict';
+
 function getAllPosts() {
     const searchId = document.querySelector('#inputId');
     const postsContainer = document.querySelector('#posts');
