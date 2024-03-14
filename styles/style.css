@@ -1,0 +1,12 @@
+/* .wrapper {
+  display: flex;
+} */
+
+.weat-win {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.icon {
+    width: 80px;
+}
