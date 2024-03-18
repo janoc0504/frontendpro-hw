@@ -15,7 +15,7 @@
             <input type="text" id="full-name" name="full-name" placeholder="Required field">
         </div>
         <div id="cityDiv" class="wrap-div">
-            <label for="city">Choose City </label>
+            <label>Choose City </label>
         </div>
         <div class="wrap-div">
             <label for="newpost-address">Enter New Post warehouse address </label>
@@ -29,7 +29,7 @@
             </select>
         </div>
         <div class="wrap-div">
-            <label for="number">Amount </label>
+            <label for="amount">Amount </label>
             <input type="number" id="amount" name="amount" min="0" placeholder="Required field">
         </div>
         <div class="wrap-div">
@@ -37,7 +37,9 @@
             <textarea name="yourWishes" id="yourWishes" cols="30" rows="3"
                 placeholder="Optional field. MAX 100 symbols." maxlength="100"></textarea>
         </div>
-        <button type="button" class="buy" onclick="buy()">Buy</button></div>
+        <div>
+        <button type="button" class="buy" onclick="buy()">Buy</button>
+        </div>
     </section>
     <section id="success" class="wrap-div"></section>
     <script src="hw-28.js"></script>

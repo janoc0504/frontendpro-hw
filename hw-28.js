@@ -8,16 +8,14 @@ const listGoods = {
     'PHONES': [{ name: 'iPhone', info: 'screen: 6.5', price: '$100' }, { name: 'Samsung Galaxy S24', info: 'screen: 7', price: '$102' }],
     'LAPTOPS': [{ name: 'MacBook Air', info: 'screen: 17', price: '$500' }, { name: 'Samsung Galaxy Book3 360', info: 'screen: 14', price: '$200' }],
     'HEADPHONES': [{ name: 'Samsung Galaxy Buds', info: 'power: 20Vt', price: '$50' }, { name: 'AirPods PRO', info: 'power: 16Vt', price: '$80' }],
-    'WIRES': [{name: 'HDMI', info: 'lenght: 2M', price: '$5' }, { name: 'TWISTED PAIRE', info: 'lenght: 1,6M', price: '$8' }]
+    'WIRES': [{name: 'HDMI', info: 'length: 2M', price: '$5' }, { name: 'TWISTED PAIR', info: 'length: 1,6M', price: '$8' }]
 };
-const checkoutWrap = document.querySelector('#checkoutWrapper');
 const categories = ['PHONES', 'LAPTOPS', 'HEADPHONES', 'WIRES'];
+const checkoutWrap = document.querySelector('#checkoutWrapper');
 const categoryList = document.createElement('div');
 goodsCategory.appendChild(categoryList);
-
 const goodsList = document.createElement('div');
 goodsCategory.appendChild(goodsList);
-
 const goodsInfo = document.createElement('div');
 goodsCategory.appendChild(goodsInfo);
 
@@ -34,7 +32,7 @@ function oneClick(event) {
     goodsList.innerHTML = '';
     goodsInfo.innerHTML = '';
     checkoutWrap.style.display = 'none';
-    
+
     listGoods[categoryName].forEach(good => {
         let listItem = document.createElement('div');
         listItem.innerHTML = `<p>${good.name}</p>`;
@@ -79,14 +77,18 @@ cityCategory.appendChild(citiesList);
 
 function checkout() {
     checkoutWrap.style.display = 'block';
-        error.innerHTML = '';
+    error.innerHTML = '';
+    const inputs = document.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+           inputs[i].value = '';
+    }
 }
 
 //Block - cities
 cities.forEach(city => {
-    const parElement = document.createElement('option');
-    parElement.innerHTML = city;
-    citiesList.appendChild(parElement);
+    const element = document.createElement('option');
+    element.innerHTML = city;
+    citiesList.appendChild(element);
 });
 
 //This function checks if the inputs are empty
@@ -101,19 +103,25 @@ function validateInputs() {
      return true;
 }
 
-//This function make the purchase or dysplays an error about inputs
+//This function make the purchase or display an error about inputs
 function buy() {
     if (validateInputs()) {
-        document.querySelector('#success').innerHTML = '';
+        const successSection =  document.querySelector('#success');
+        let amountPurchase = document.getElementById('amount').value;
+        let price = /Price: \$(\d+)/;
+        let matchPrice = document.getElementById('product').textContent.match(price);
+        let tempPrice = matchPrice[1];
+
+        successSection.innerHTML = '';
         error.innerHTML = '';
-        document.querySelector('#success').appendChild(document.createElement('div')).innerHTML = `<h4>You bouth: </h4>`;
-        document.querySelector('#success').appendChild(document.createElement('div')).textContent = document.getElementById('product').textContent;
-        document.querySelector('#success').appendChild(document.createElement('div')).innerHTML = `<p>${document.querySelector('#amount').value} units</p>`;
-        document.querySelector('#success').appendChild(document.createElement('div')).innerHTML = `<h4>Your purchase will delivery at the address: </h4>`;
-        document.querySelector('#success').appendChild(document.createElement('div')).textContent = document.querySelector('#newpost-address').value;
-        document.querySelector('#success').appendChild(document.createElement('div')).innerHTML = document.getElementById('amount').value;
+
+        successSection.appendChild(document.createElement('div')).innerHTML = `
+        <p>You bought: ${document.getElementById('product').textContent},
+        ${document.querySelector('#amount').value} units for the amount $${amountPurchase * tempPrice}.</p>
+        <p>Your purchase will delivery at the address: ${document.querySelector('#newpost-address').value}.</p>
+        `;
     } else {
-        error.innerHTML = `<h3>You have not complited all fields, please, enter all required information.</h3>`;
+        error.innerHTML = `<h3>You have not completed all fields, please, enter all required information.</h3>`;
         checkoutWrap.appendChild(error);
     }
 }
