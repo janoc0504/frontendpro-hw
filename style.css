@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+}
+
+.category {
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 10px 10px;
+    max-width: 200px;
+}
+
+.list {
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 10px 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 0 10px;
+    margin: 10px 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.buy {
+    cursor: pointer;
+    margin-bottom: 5px;
+    ;
+}
+
+.selected {
+    background-color: lightblue;
+}
+
+.checkout-wrap {
+    border: 1px solid black;
+    display: none;
+    max-width: 712px;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.wrap-div {
+    padding: 10px 0 10px;
+}
