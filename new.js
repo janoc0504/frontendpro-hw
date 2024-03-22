@@ -8,9 +8,9 @@ function getAge(yearBirth) {
     return age;
 }
 function info() {
-    let sport = prompt('What kind of sport do you love?');
-    let city = prompt('What is your current city?');
     let yearBirth = +prompt('What is your year of birth?');
+    let city = prompt('What is your current city?');
+    let sport = prompt('What kind of sport do you love?');
 
     const currentLocation = document.querySelector('#location');
     const currentSports = document.querySelector('#sports');
@@ -31,7 +31,7 @@ function info() {
         currentSports.innerHTML = `<p>Круто! Хочеш стати ${sportsChampions[sport.toLowerCase()]}?</p>`;
     }
 
-    function getCountry(city) {
+    function getCountry() {
         const capitals = {
             "Kiev": "України",
             "Washington": "США",
