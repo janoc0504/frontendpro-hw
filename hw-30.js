@@ -1,36 +1,24 @@
 'use strict';
 
-const arrList = [1, 2, 3];
-const arrListSubList = [1.1, 1.2, 1.3];
+const arrList = [1, 2, 3, [1.1, 1.2, 1.3, 1.4], 4, 5, 6];
+const arrListSubList = [1, 2, 3, 4, 5, 6];
 const $wrapper = document.getElementById('wrapper');
 
-function generateList1(arr1) {
+function generateList(arr) {
     const $ul = document.createElement('ul');
     $wrapper.append($ul);
-    for(let item of arr1) {
+
+    arr.forEach(item => {
         const $li = document.createElement('li');
-        $ul.append($li);
-        $li.textContent = item;
-        console.log(item);
-    }
-}
-function generateList2(arr1, arr2) {
-    const $ul = document.createElement('ul');
-    $wrapper.append($ul);
-    for(let item of arr1) {
-        const $li = document.createElement('li');
-        $ul.append($li);
-        $li.textContent = item;
-        console.log(item);
-        if(item === 2) {
-            for(let item of arr2) {
-                const $li = document.createElement('li');
-                $ul.append($li);
-                $li.textContent = item;
-            }
+        if (Array.isArray(item)) {
+            $li.appendChild(generateList(item));
+        } else {
+            $li.textContent = item;
         }
-    }
+        $ul.appendChild($li);
+    });
+    return $ul;
 }
 
-generateList1(arrList);
-generateList2(arrList, arrListSubList);
+generateList(arrList);
+generateList(arrListSubList);
