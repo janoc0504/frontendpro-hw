@@ -163,9 +163,9 @@ function buy() {
 
 // function to save in localStorage
 function saveOrder(order) {
-    let orders = JSON.parse(localStorage.getItem('orders')) || []; // Получаем текущие заказы из localStorage или создаем новый массив
-    orders.push(order); // Добавляем новый заказ в массив
-    localStorage.setItem('orders', JSON.stringify(orders)); // Сохраняем массив заказов в localStorage
+    let orders = JSON.parse(localStorage.getItem('orders')) ||Добавляем новый заказ в массив []; // from localStorage or new array
+    orders.push(order); // add new order
+    localStorage.setItem('orders', JSON.stringify(orders)); // save to localStorage
 }
 
 //displey all orders function
@@ -214,10 +214,10 @@ function expandOrder(index) {
 
 //delete orders function
 function deleteOrder(index) {
-    let orders = JSON.parse(localStorage.getItem('orders')) || []; // Получаем текущие заказы из localStorage
-    orders.splice(index, 1); // Удаляем заказ из массива
-    localStorage.setItem('orders', JSON.stringify(orders)); // Сохраняем обновленный массив заказов в localStorage
-    displayOrders(); // Перерисовываем список заказов
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    orders.splice(index, 1); 
+    localStorage.setItem('orders', JSON.stringify(orders));
+    displayOrders();
 }
 
 //list output orders function
