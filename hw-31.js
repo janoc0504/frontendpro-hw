@@ -163,7 +163,7 @@ function buy() {
 
 // function to save in localStorage
 function saveOrder(order) {
-    let orders = JSON.parse(localStorage.getItem('orders')) ||Добавляем новый заказ в массив []; // from localStorage or new array
+    let orders = JSON.parse(localStorage.getItem('orders')) || []; // from localStorage or new array
     orders.push(order); // add new order
     localStorage.setItem('orders', JSON.stringify(orders)); // save to localStorage
 }
