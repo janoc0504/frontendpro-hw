@@ -3,12 +3,58 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Store</title>
 </head>
 
 <body>
-
-    <script src=""></script>
+<header class="header">
+    <button id="reload-page">Return to main page</button><br>
+    <button id="my-orders">My orders</button>
+</header>
+<div class="wrapper">
+    <section id="category" class="cat-section"></section>
+    <section id="products" class="prod-section"></section>
+    <section id="info" class="info-section"></section>
+    <section id="myModal" class="modal">
+        <div class="modal-content checkoutWrapper">
+            <span class="close">&times;</span>
+            <div class="wrap-div">
+                <label for="full-name">Enter your full name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Required field">
+            </div>
+            <div id="cityDiv" class="wrap-div">
+                <label>Choose City </label>
+            </div>
+            <div class="wrap-div">
+                <label for="newpost-address">Enter New Post warehouse address </label>
+                <input type="text" id="newpost-address" name="newpost-address" placeholder="Required field"
+                       maxlength="100">
+            </div>
+            <div class="wrap-div">
+                <label for="paymentType">Type of payment </label>
+                <select name="paymentType" id="paymentType">
+                    <option value="card">Credit/Debit card </option>
+                    <option value="cash">Cash</option>
+                </select>
+            </div>
+            <div class="wrap-div">
+                <label for="amount">Amount </label>
+                <input type="number" id="amount" name="amount" min="1" placeholder="Required field">
+            </div>
+            <div class="wrap-div">
+                <label for="yourWishes">Your wishes/comments</label><br>
+                <textarea name="yourWishes" id="yourWishes" cols="30" rows="3"
+                          placeholder="Optional field. MAX 100 symbols." maxlength="100"></textarea>
+            </div>
+            <button type="button" class="buy" onclick="buy()">Buy</button>
+            <div id="success"></div>
+        </div>
+    </section>
+</div>
+<section id="orders"></section>
+<script src="hw-31.js"></script>
 </body>
 
 </html>
