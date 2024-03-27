@@ -33,28 +33,24 @@ class Unit {
 }
 
 //декілька екземплярів класу Квартира;
-const unit = new Unit();
 const unit1 = new Unit();
 const unit2 = new Unit();
-const unit3 = new Unit(Jack);
 
 //додадити екземпляри класу Людина до екземплярів класу Квартира;
-//I didn't understand what output we should make,
-//so I made one human - one unit
 unit1.addNeighbuor(Jon);
-console.log(unit1);
-unit2.addNeighbuor(Bob);
-console.log(unit2);
-unit3.addNeighbuor(Jack);
-console.log(unit3);
-//one unit - several humans
-unit.addNeighbuor(Caty);
-unit.addNeighbuor(Jaeni);
-unit.addNeighbuor(Anna);
-
+unit1.addNeighbuor(Bob);
+unit1.addNeighbuor(Jack);
 //get the array of neighbours
-unit.neighbours.forEach(neighbours => {
-  console.log(neighbours.name, neighbours.gender);
+unit1.neighbours.forEach(neighbours => {
+  console.log(`${neighbours.gender} ${neighbours.name} are living in the unit1.`);
+})
+
+unit2.addNeighbuor(Caty);
+unit2.addNeighbuor(Jaeni);
+unit2.addNeighbuor(Anna);
+//get the array of neighbours
+unit2.neighbours.forEach(neighbours => {
+  console.log(`${neighbours.gender} ${neighbours.name} are living in the unit2.`);
 })
 
 //Створити клас Будинок.
